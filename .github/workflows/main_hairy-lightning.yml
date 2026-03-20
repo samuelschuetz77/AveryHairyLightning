@@ -45,9 +45,8 @@ jobs:
       
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
-        uses: azure/webapps-deploy@v2
+        uses: azure/webapps-deploy@v3
         with:
           app-name: 'hairy-lightning'
-          slot-name: 'Production'
           images: 'docker.io/${{ secrets.AZUREAPPSERVICE_CONTAINERUSERNAME_586DAC44F4184596916F04BB5D099BA1 }}/hairylightning:${{ github.sha }}'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7C290EEED20946C281DDA693C4CF3B06 }}
