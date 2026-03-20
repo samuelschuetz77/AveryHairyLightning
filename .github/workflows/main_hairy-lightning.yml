@@ -31,10 +31,10 @@ jobs:
       - name: Build and push container image to registry
         uses: docker/build-push-action@v3
         with:
-          context: .
+          context: ./api
           push: true
           tags: docker.io/${{ secrets.AZUREAPPSERVICE_CONTAINERUSERNAME_586DAC44F4184596916F04BB5D099BA1 }}/hairylightning:${{ github.sha }}
-          file: ./Dockerfile
+          file: ./api/Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
